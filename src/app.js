@@ -13,13 +13,6 @@ app.use(express.urlencoded({ extended: true }));
 // Routes
 app.use('/api/books', bookRoutes);
 
-app.get('/',(req, res) => {
-  res.send({
-    activeStatus:true,
-    error:false,
-   });
-});
-
 // Welcome route
 app.get('/', (req, res) => {
   res.json({ message: 'Welcome to Book Management API' });
