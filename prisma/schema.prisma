@@ -1,0 +1,26 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Book {
+  id          Int      @id @default(autoincrement())
+  title       String
+  author      String
+  publishYear Int?
+  genre       String?
+  description String?   @db.Text
+  imageUrl    String?
+  inStock     Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// You can later add more models like User, Borrowing, etc.
