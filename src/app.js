@@ -1,9 +1,19 @@
 const express = require('express');
-const cors = require('cors');
+
 const bookRoutes = require('./routes/book.routes');
 const errorMiddleware = require('./middleware/error.middleware');
 
+
+const cors = require('cors');
 const app = express();
+
+// Configure CORS
+app.use(cors({
+  origin: 'https://bookssmanagement.netlify.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 
 // Middleware
 app.use(cors());
