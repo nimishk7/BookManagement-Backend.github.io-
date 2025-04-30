@@ -5,7 +5,7 @@
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
-          "value": "https://bookssmanagement.netlify.app"
+          "value": "https://bookssmanagement.netlify.app "
         }
       ]
     }
